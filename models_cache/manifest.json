@@ -1,0 +1,30 @@
+{
+  "downloaded_at": "2026-03-12T16:34:09.715415",
+  "models": {
+    "whisper": {
+      "hf_id": "openai/whisper-base",
+      "status": "\u2717 failed",
+      "error": "[WinError 1114] A dynamic link library (DLL) initialization routine failed. Error loading \"C:\\Users\\Enoch Quayson\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies."
+    },
+    "opus-en-fr": {
+      "hf_id": "Helsinki-NLP/opus-mt-tc-big-en-fr",
+      "status": "\u2717 failed",
+      "error": "[WinError 1114] A dynamic link library (DLL) initialization routine failed. Error loading \"C:\\Users\\Enoch Quayson\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies."
+    },
+    "opus-en-tw": {
+      "hf_id": "Helsinki-NLP/opus-mt-en-tw",
+      "status": "\u2717 failed",
+      "error": "[WinError 1114] A dynamic link library (DLL) initialization routine failed. Error loading \"C:\\Users\\Enoch Quayson\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies."
+    },
+    "mms-tts-fra": {
+      "hf_id": "facebook/mms-tts-fra",
+      "status": "\u2717 failed",
+      "error": "[WinError 1114] A dynamic link library (DLL) initialization routine failed. Error loading \"C:\\Users\\Enoch Quayson\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies."
+    },
+    "mms-tts-aka": {
+      "hf_id": "facebook/mms-tts-aka",
+      "status": "\u2717 failed",
+      "error": "[WinError 1114] A dynamic link library (DLL) initialization routine failed. Error loading \"C:\\Users\\Enoch Quayson\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies."
+    }
+  }
+}

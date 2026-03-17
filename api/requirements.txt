@@ -1,0 +1,32 @@
+# S2S Translator — FastAPI Server Requirements
+
+# Web framework
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+
+# Database (async)
+asyncpg>=0.29.0
+
+# Auth
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# Settings
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# File handling
+python-multipart>=0.0.9
+
+# Static files
+aiofiles>=23.0.0
+
+# ── ML pipeline (same as pipeline/requirements.txt) ──────────────────
+torch>=2.0.0
+torchaudio>=2.0.0
+transformers>=4.33.0
+sentencepiece>=0.1.99
+sacremoses>=0.1.1
+openai-whisper>=20231117
+scipy>=1.10.0
+numpy>=1.24.0
