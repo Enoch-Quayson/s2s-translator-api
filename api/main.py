@@ -8,8 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from core.config import settings
-from core.state  import app_state
-from routers     import translate, users, history, phrasebook, models, health
+from core.state import app_state
+from routers import translate, users, history, phrasebook, models, health
 
 logging.basicConfig(
     level=logging.INFO,
@@ -67,3 +67,27 @@ async def global_exception_handler(request, exc):
         status_code=500,
         content={"error": "Internal server error", "detail": str(exc)},
     )
+
+import whisper
+from fastapi import UploadFile, File
+import tempfile
+import os
+
+# Load Whisper model
+asr_model = whisper.load_model("base")
+
+@app.post("/asr")
+async def speech_to_text(file: UploadFile = File(...)):
+    # Save uploaded file temporarily
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_file:
+        temp_file.write(await file.read())
+        temp_path = temp_file.name
+
+    # Transcribe audio
+    result = asr_model.transcribe(temp_path)
+
+    # Delete temp file
+    os.remove(temp_path)
+
+    return {"text": result["text"]}
+

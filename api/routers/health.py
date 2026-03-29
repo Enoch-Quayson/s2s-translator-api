@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter
 from pydantic import BaseModel
-from core.state import app_state
+from api.core.state import app_state
 
 router = APIRouter()
 

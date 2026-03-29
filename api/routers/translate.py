@@ -17,7 +17,7 @@ from typing   import Optional
 from fastapi  import APIRouter, Depends, HTTPException, UploadFile, File, Form
 from fastapi.responses import FileResponse
 
-from core.config  import settings
+from core.config import settings
 from core.state   import app_state
 from core.auth    import get_current_user, get_optional_user
 from schemas.models import (
@@ -26,7 +26,7 @@ from schemas.models import (
     TranscribeResponse,
 )
 
-logger = APIRouter.__class__  # just for type hints
+logger = logging.getLogger(__name__)
 router = APIRouter()
 log    = logging.getLogger("s2s.translate")
 
