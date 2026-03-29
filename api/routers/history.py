@@ -15,9 +15,9 @@ from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 
-from api.core.state  import app_state
-from api.core.auth   import get_current_user
-from api.schemas.models import (
+from core.state  import app_state
+from core.auth   import get_current_user
+from schemas.models import (
     HistoryListResponse, HistoryItem,
     UpdateHistoryRequest, MessageResponse,
 )
