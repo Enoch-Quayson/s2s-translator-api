@@ -9,8 +9,8 @@ from typing import Optional
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import JWTError, jwt
-from core.config import settings
-from core.state import app_state
+from api.core.config import settings
+from api.core.state import app_state
 
 logger = logging.getLogger("s2s.auth")
 bearer_scheme = HTTPBearer(auto_error=False)
