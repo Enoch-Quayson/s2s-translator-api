@@ -68,26 +68,3 @@ async def global_exception_handler(request, exc):
         content={"error": "Internal server error", "detail": str(exc)},
     )
 
-import whisper
-from fastapi import UploadFile, File
-import tempfile
-import os
-
-# Load Whisper model
-asr_model = whisper.load_model("base")
-
-@app.post("/asr")
-async def speech_to_text(file: UploadFile = File(...)):
-    # Save uploaded file temporarily
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_file:
-        temp_file.write(await file.read())
-        temp_path = temp_file.name
-
-    # Transcribe audio
-    result = asr_model.transcribe(temp_path)
-
-    # Delete temp file
-    os.remove(temp_path)
-
-    return {"text": result["text"]}
-
